@@ -19,7 +19,7 @@ export default function TabOneScreen({
 		start(false);
 	}
 	function onSwipeDown() {
-		setTop(0);
+		setTop(50);
 		setBottom(bottom - 50);
 		start(true);
 	}
