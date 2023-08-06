@@ -100,7 +100,7 @@ function BottomTabNavigator() {
 							})}
 						>
 							<FontAwesome
-								name="info-circle"
+								name="sign-in"
 								size={25}
 								color={Colors[colorScheme].text}
 								style={{ marginRight: 15 }}
@@ -113,7 +113,7 @@ function BottomTabNavigator() {
 				name="TabTwo"
 				component={TabTwoScreen}
 				options={{
-					title: "Tab Two",
+					title: "Account info",
 					tabBarIcon: ({ color }) => (
 						<TabBarIcon name="code" color={color} />
 					),

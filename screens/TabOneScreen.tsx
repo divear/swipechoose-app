@@ -1,9 +1,8 @@
-import { Button, StyleSheet, Image } from "react-native";
-
+import { Button, StyleSheet, Image, TouchableOpacity, Alert } from "react-native";
 import { Text, View } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
 import { useSwipe } from "../hooks/useSwipe";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function TabOneScreen({
 	navigation,
@@ -12,6 +11,8 @@ export default function TabOneScreen({
 	const { onTouchStart, onTouchEnd } = useSwipe(onSwipeDown, onSwipeUp, 6);
 	const [top, setTop] = useState(0);
 	const [bottom, setBottom] = useState(0);
+
+
 
 	function onSwipeUp() {
 		setBottom(0);
@@ -23,6 +24,9 @@ export default function TabOneScreen({
 		setBottom(bottom - 50);
 		start(true);
 	}
+	const onPressImage = () => {
+
+	};
 
 	const start = (direction: boolean) => {
 		setMes(`Chose ${direction ? "up" : "down"}`);
@@ -34,10 +38,12 @@ export default function TabOneScreen({
 			onTouchEnd={onTouchEnd}
 			style={styles.container}
 		>
-			<Image
-				style={{ top: top, height: 500, width: 500 }}
-				source={require("../assets/images/tests/4k_phozo.jpg")}
-			/>
+			<TouchableOpacity onPress={onPressImage}>
+				<Image
+					style={{ top: top, height: 500, width: 500 }}
+					source={require("../assets/images/tests/4k_phozo.jpg")}
+				/>
+			</TouchableOpacity>
 			<Text style={styles.basicText}>
 				Swipe to choose which picture you like the better
 			</Text>
@@ -46,7 +52,7 @@ export default function TabOneScreen({
 				style={{ top: top, height: 500, width: 500 }}
 				source={require("../assets/images/tests/big_snail.jpg")}
 			/>
-		</View>
+		</View >
 	);
 }
 
