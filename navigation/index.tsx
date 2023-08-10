@@ -59,7 +59,7 @@ function RootNavigator() {
 			<Stack.Screen
 				name="NotFound"
 				component={NotFoundScreen}
-				options={{ title: "Oops!" }}
+				options={{ title: "Stránka nenalezena" }}
 			/>
 			<Stack.Group screenOptions={{ presentation: "modal" }}>
 				<Stack.Screen name="Modal" component={ModalScreen} />
@@ -90,7 +90,7 @@ function BottomTabNavigator() {
 				options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
 					title: "Swipechoose",
 					tabBarIcon: ({ color }) => (
-						<TabBarIcon name="code" color={color} />
+						<TabBarIcon name="home" color={color} />
 					),
 					headerRight: () => (
 						<Pressable
@@ -100,7 +100,7 @@ function BottomTabNavigator() {
 							})}
 						>
 							<FontAwesome
-								name="sign-in"
+								name="plus"
 								size={25}
 								color={Colors[colorScheme].text}
 								style={{ marginRight: 15 }}
@@ -115,7 +115,7 @@ function BottomTabNavigator() {
 				options={{
 					title: "Account info",
 					tabBarIcon: ({ color }) => (
-						<TabBarIcon name="code" color={color} />
+						<TabBarIcon name="user" color={color} />
 					),
 				}}
 			/>
